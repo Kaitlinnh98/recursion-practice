@@ -5,12 +5,58 @@
 // Example:  5! = 5 x 4 x 3 x 2 x 1 = 120
 // factorial(5);  // 120
 var factorial = function(n) {
- 
+ if (n === 10) return 1;
+ return n * factorial(n - 1);
 };
 
 // 2. Compute the sum of an array of integers.
 // Example:  sum([1, 2, 3, 4, 5, 6]);  // 21
 var sum = function(array) {
+    // base
+    if (array.length === 0){
+      return output;
+    }
+    // recursion
+    
+    output += array[0]; // output = 1
+    
+    return sum(array.slice(1), output);
+    
+  }
+  
+  console.log(sum([1, 2, 3]));
+  
+  // what is the purpose of the default param?
+  
+  /*
+  
+  // sum([1, 2, 3]) // <== #1
+          ^
+   // if () // FALSE
+   // RECURSION
+     // output = 1
+     // return sum([2, 3], 1)
+     
+       // sum([2, 3], 1) // <== #2
+               ^
+         // if () //
+         // RECURSION
+           // output = 3 
+           // return sum([3], 3)
+           
+             // sum([3], 3) // <== #3
+                     ^
+               // if () // FALSE
+               // RECURSION
+                // output = 6
+                // return sum([], 6)
+                
+                  // sum([], 6)
+                    // if (0 === 0)
+                      // return 6
+  
+  
+  */
 };
 
 // 3. Sum all numbers in an array containing nested arrays.
